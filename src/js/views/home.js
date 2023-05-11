@@ -15,9 +15,9 @@ export const Home = () => {
 	},[])
 
 	return(
-		<div className="text-center mx-auto">
-		<h1 className="text-white">Character</h1>
-	<div className="text-center mt-5 d-flex">
+		<div className="text-center mx-auto ">
+		<h1 className="text-white h4 pb-2 mb-4 border-bottom border-light">Characters</h1>
+	<div className="text-center mt-5 d-flex overflow-scroll">
 		
 		{store.people.map((person)=>{
 			return <div className="text-center mx-auto mb-5">
@@ -29,8 +29,8 @@ export const Home = () => {
 		})}
 		
 	</div>
-	<h1 className="text-white">Vehicles</h1>
-	<div className="text-center mt-5 d-flex">
+	<h1 className="text-white h4 pb-2 mb-4 border-bottom border-light">Vehicles</h1>
+	<div className="text-center mt-5 d-flex overflow-scroll">
 		
 		{store.vehicles.map((vehicle)=>{
 			return <div className="text-center mx-auto mb-5">
@@ -42,8 +42,8 @@ export const Home = () => {
 		})}
 		
 	</div>
-	<h1 className="text-white">planets</h1>
-	<div className="text-center mt-5 d-flex">
+	<h1 className="text-white h4 pb-2 mb-4 border-bottom border-light">Planets</h1>
+	<div className="text-center mt-5 d-flex overflow-scroll">
 		
 		{store.planets.map((planet)=>{
 			return <div className="text-center mx-auto mb-5">

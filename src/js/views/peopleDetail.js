@@ -13,7 +13,7 @@ useEffect (()=>{
 
 
 	return(
-	<>
+	<div className="text-white">
 		<h1>people Detail</h1>
         <h3>
             {store.peopleInfo.name}
@@ -23,5 +23,5 @@ useEffect (()=>{
         </h3>
        
 		
-	</>
+	</div>
 )};

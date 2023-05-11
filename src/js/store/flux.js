@@ -32,7 +32,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 			fetchStarWars: async (element) => {
-				let baseUrl = `https://www.swapi.tech/api/${element}?page=1&limit=6`
+				let baseUrl = `https://www.swapi.tech/api/${element}?page=1&limit=10`
 				try {
 					let response = await fetch(baseUrl)
 					console.log(response)
