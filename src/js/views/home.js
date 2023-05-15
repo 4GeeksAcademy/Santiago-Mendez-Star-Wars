@@ -21,7 +21,7 @@ export const Home = () => {
 		
 		{store.people.map((person)=>{
 			return <div className="text-center mx-auto mb-5">
-				<Card name={person.name} uid={person.uid} key={person.uid} detail="peopleDetail">
+				<Card name={person.name} uid={person.uid} key={person.uid} detail="characters">
 				
 			</Card>
 			{/* <h1>{person.name}</h1> */}
@@ -34,7 +34,7 @@ export const Home = () => {
 		
 		{store.vehicles.map((vehicle)=>{
 			return <div className="text-center mx-auto mb-5">
-				<Card name={vehicle.name} uid={vehicle.uid} key={vehicle.uid}>
+				<Card name={vehicle.name} uid={vehicle.uid} key={vehicle.uid} detail= "vehicles">
 				
 			</Card>
 			{/* {<h1>{vehicle.name}</h1>} */}
@@ -47,7 +47,7 @@ export const Home = () => {
 		
 		{store.planets.map((planet)=>{
 			return <div className="text-center mx-auto mb-5">
-				<Card name={planet.name} uid={planet.uid} key={planet.uid}>
+				<Card name={planet.name} uid={planet.uid} key={planet.uid} detail="planets">
 				
 			</Card>
 			{/* {<h1>{vehicle.name}</h1>} */}

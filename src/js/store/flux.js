@@ -1,11 +1,15 @@
+import { element } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			
+			favorites: [],
 			people: [],
 			vehicles: ["toyota"],
 			planets: [],
-			peopleInfo: {}
+			peopleInfo: {},
+			vehiclesInfo: {},
+			planetsInfo: {}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -65,8 +69,59 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch(error) {
 					console.log(error)
 				}
-            }
+            },
+			
+			
+			fetchVeiclesDetail: async (id) => {
+				let baseUrl = `https://www.swapi.tech/api/vehicles/${id}`
+				try {
+					let response = await fetch(baseUrl)
+					console.log(response)
+					if (!response.ok) return response.status
+					let data = await response.json()
+					console.log(data.result.properties)
+					
+					setStore({vehiclesInfo: data?.result.properties}) 
+					console.log(getStore().vehiclesInfo)
+				}
+				catch(error) {
+					console.log(error)
+				}
+            },
+
+			fetchPlanetsDatail: async (id) => {
+				let baseUrl = `https://www.swapi.tech/api/planets/${id}`
+				try {
+					let response = await fetch(baseUrl)
+					console.log(response)
+					if (!response.ok) return response.status
+					let data = await response.json()
+					console.log(data.result.properties)
+					
+					setStore({planetsInfo: data?.result.properties}) 
+					console.log(getStore().planetsInfo)
+				}
+				catch(error) {
+					console.log(error)
+				}
+            },
+
+			addFavorites: (favorite)=>{
+				const listFavorites = getStore().favorites;
+				if (!listFavorites.includes(favorite)){
+					const newFavorites = listFavorites.concat(favorite);
+					setStore({favorites: newFavorites});
+					console.log(getStore().favorites)
+				}			
+			},
+			deleteFavorites: (favorite)=>{
+				const listFavorites = getStore().favorites;
+				const newFavorites = listFavorites.filter((element) => element !== favorite)
+				setStore({favorites: newFavorites})
+			}
+		
 		}
+
 	};
 };
 
