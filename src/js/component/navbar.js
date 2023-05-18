@@ -21,7 +21,7 @@ export const Navbar = () => {
 	{store.favorites.map(
 	(favorite, index)=>{
 		return (
-		<li key={index}>{favorite} <button onClick={() => {actions.deleteFavorites(favorite)}}>X</button></li>
+		<li key={index}>{favorite} <button onClick={() => {actions.deleteFavorites(favorite)}}  className="rounded-circle" alt="...">X</button></li>
 		);
 	}	
 	)}
