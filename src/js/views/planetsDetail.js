@@ -15,7 +15,7 @@ useEffect (()=>{
 	return(
 	<div className="text-white text-center">
         <h1>
-            {store.planetsInfo.name}
+            {store.planetsInfo.name} 
         </h1>
 		<img src={`https://starwars-visualguide.com/assets/img/planets/${params.theid}.jpg`}></img>
 
